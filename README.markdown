@@ -1,4 +1,4 @@
-# Notifier
+# Notifiers
 
 Use notifications in a simple and elegant way. :)
 
