@@ -4,7 +4,7 @@ Use notifications in a simple and elegant way. :)
 
 ## Install
 
-  gem install notifiers
+     gem install notifiers
 
 # Usage
 
