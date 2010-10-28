@@ -19,8 +19,8 @@ Use notifications in a simple and elegant way. :)
 
      notify_send.image('my_image.png').message('Hi Growl').notify!
 
-## Why I created this gem?
+# Why I created this gem?
 
-#### Only one explanation:
+## Only one explanation:
 
-##### <b>Because is fun! =)</b>
+### <b>Because is fun! =)</b>
