@@ -1,6 +1,6 @@
 # Notifier
 
-Use notifications in a simple and elegant DSL. :)
+Use notifications in a simple and elegant way. :)
 
 ## Install
 
@@ -19,12 +19,8 @@ Use notifications in a simple and elegant DSL. :)
 
    notify_send.image('my_image.png').message('Hi Growl').notify!
 
-## Knotify
-
-   knotify.image('my_image.png').message('Hi Growl').notify!
-
 ## Why I created this gem?
 
 #### Only one explanation:
 
-#### <b>Because is fun! =)</b>
+##### <b>Because is fun! =)</b>

@@ -7,8 +7,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Tomás D'Stefano"]
   s.email       = ["tomasdestefi@gmail.com"]
   s.homepage    = "http://rubygems.org/gems/notifiers"
-  s.summary     = "Use notifications in a simple and elegant DSL."
-  s.description = "Use Growl, Lib-Notify, Knotify in a simple DSL."
+  s.summary     = "Use notifications in a simple and elegant way."
+  s.description = "Use Growl, Lib-Notify, Knotify in a simple and clean way."
 
   s.required_rubygems_version = ">= 1.3.6"
   s.rubyforge_project         = "notifiers"
