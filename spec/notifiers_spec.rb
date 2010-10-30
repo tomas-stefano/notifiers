@@ -8,4 +8,6 @@ describe 'notifiers' do
   
   it { notify_send.should be_instance_of(NotifySend)}
   
+  it { lib_notify.should be_instance_of(NotifySend)}
+  
 end

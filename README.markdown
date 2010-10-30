@@ -19,6 +19,12 @@ Use notifications in a simple and elegant way. :)
 
      notify_send.image('my_image.png').message('Hi Growl').notify!
 
+<b>Obs.: #notify_send is an alias to #lib_notify .</b>
+
+## Knotify
+
+     knotify.title('Hello World').message('Hi!').notify!
+
 # Why I created this gem?
 
 ## Only one explanation:

@@ -15,5 +15,6 @@ module Notifiers
   def notify_send
     NotifySend.new
   end
+  alias :lib_notify :notify_send
   
 end
