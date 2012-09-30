@@ -5,7 +5,7 @@ class Growl
     @image = icon
     self
   end
-  
+
   def title(text)
     @title = text
     self
@@ -15,27 +15,27 @@ class Growl
     @message = text
     self
   end
-  
+
   def priority(number)
     @priority = number
     self
   end
-  
+
   def host(hostname)
     @host = hostname
     self
   end
-  
+
   def password(secret)
     @password = secret
     self
   end
-  
+
   def auth(authentication)
     @auth = authentication
     self
   end
-  
+
   def to_s
     command = COMMAND.clone
     command << " --title '#{@title}'" if @title
@@ -46,7 +46,7 @@ class Growl
     end
     command
   end
-  
+
   def notify!
     system(to_s)
   end
