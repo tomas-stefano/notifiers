@@ -6,22 +6,22 @@ Use notifications in a simple and elegant way. :)
 
      gem install notifiers
 
-# Usage
+## Usage
 
      require 'notifiers'
      include Notifiers
 
-## Growl
+### Growl
 
      growl.message('Hi Growl!').image('my_image.png').priority(2).name('my_app').notify!
 
-## Lib_Notify
+### Lib_Notify
 
      notify_send.image('my_image.png').message('Hi Growl').notify!
 
 <b>Obs.: #notify_send is an alias to #lib_notify .</b>
 
-## Knotify
+### Knotify
 
      knotify.title('Hello World').message('Hi!').notify!
 
@@ -29,4 +29,4 @@ Use notifications in a simple and elegant way. :)
 
 ## Only one explanation:
 
-### <b>Because is fun! =)</b>
+### Because is fun! =)
