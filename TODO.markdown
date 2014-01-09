@@ -1,0 +1,1 @@
+* When the notifer command doesn't exists, show a better error message.
