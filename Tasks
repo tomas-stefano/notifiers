@@ -1,4 +1,0 @@
-#!/usr/bin/env ruby
-class Tasks < Morpheus::Base
-  rspec
-end
