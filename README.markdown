@@ -1,6 +1,6 @@
 # Notifiers
 
-Use notifications in a simple and elegant way. :)
+Use notifications systems like growlm kib-notify in a simple and elegant way. :)
 
 ## Install
 
