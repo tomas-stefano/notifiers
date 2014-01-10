@@ -1,13 +1,11 @@
 require 'spec_helper'
 
 describe Growl do
-
   before do
     @growl = growl
   end
 
   describe '#image' do
-
     it "should keep the image" do
       @growl.image('my_image.png')
       @growl.instance_variable_get(:@image).should eql 'my_image.png'
@@ -92,7 +90,6 @@ describe Growl do
   end
 
   describe '#to_s' do
-
     it "should construct the command" do
       command = @growl.message('Hello World!').priority(1).image('mario.png').to_s
       command.should eql "growlnotify --message 'Hello World!' --image mario.png --priority 1"
@@ -107,7 +104,5 @@ describe Growl do
       command = @growl.message('Last Kiss').title('Pearl Jam').to_s
       command.should eql "growlnotify --title 'Pearl Jam' --message 'Last Kiss'"
     end
-
   end
-
 end

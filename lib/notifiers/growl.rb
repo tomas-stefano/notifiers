@@ -1,5 +1,7 @@
 class Growl
-  COMMAND = "growlnotify"
+  COMMAND       = 'growlnotify'
+  ERROR_MESSAGE = "The Growl is not installed. You can find more details here:
+http://growl.info/downloads"
 
   def image(icon)
     @image = icon
@@ -48,7 +50,6 @@ class Growl
   end
 
   def notify!
-    system(to_s)
+    puts ERROR_MESSAGE unless system(to_s)
   end
-
 end
