@@ -3,7 +3,6 @@
 end
 
 module Notifiers
-
   def growl
     Growl.new
   end
