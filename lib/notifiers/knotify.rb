@@ -1,4 +1,4 @@
-class Knotify
+class Knotify < Notifiers::Base
   COMMAND = "dcop knotify default notify eventname"
 
   def message(text)
@@ -18,9 +18,5 @@ class Knotify
     command << " '' ''"
     command << " 12 1"
     command
-  end
-
-  def notify!
-    system(to_s)
   end
 end

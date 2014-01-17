@@ -1,4 +1,4 @@
-class Growl
+class Growl < Notifiers::Base
   COMMAND       = 'growlnotify'
   ERROR_MESSAGE = "The Growl is not installed. You can find more details here:
 http://growl.info/downloads"
@@ -47,9 +47,5 @@ http://growl.info/downloads"
       command << " --#{option} #{variable}" if variable
     end
     command
-  end
-
-  def notify!
-    puts ERROR_MESSAGE unless system(to_s)
   end
 end

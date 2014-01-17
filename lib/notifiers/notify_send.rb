@@ -1,4 +1,4 @@
-class NotifySend
+class NotifySend < Notifiers::Base
   COMMAND = 'notify-send'
 
   def message(text)
@@ -44,10 +44,4 @@ class NotifySend
     end
     command
   end
-
-  # Extract this to a module or something
-  def notify!
-    system(to_s)
-  end
-
 end

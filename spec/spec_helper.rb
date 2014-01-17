@@ -8,3 +8,9 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 end
+
+shared_examples_for 'a notifier' do
+  describe '#notify' do
+    it { expect(subject).to respond_to(:notify) }
+  end
+end

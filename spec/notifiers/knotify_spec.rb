@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe Knotify do
+  it_should_behave_like 'a notifier'
+
   before do
     @knotify = Knotify.new
   end

@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe NotifySend do
+  it_should_behave_like 'a notifier'
+  
   before do
     @notify_send = notify_send
   end

@@ -1,4 +1,4 @@
-[ :growl, :knotify, :notify_send].each do |notifier|
+[:base, :growl, :knotify, :notify_send].each do |notifier|
   require "notifiers/#{notifier}"
 end
 

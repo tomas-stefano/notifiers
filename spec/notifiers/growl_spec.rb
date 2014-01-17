@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe Growl do
+  it_should_behave_like 'a notifier'
+
   before do
     @growl = growl
   end
