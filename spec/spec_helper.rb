@@ -1,4 +1,4 @@
-
+require 'bundler/setup'
 require 'notifiers'
 
 RSpec.configure do |config|
