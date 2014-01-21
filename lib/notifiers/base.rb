@@ -14,5 +14,20 @@ module Notifiers
       system(to_s)
     end
     alias :notify! :notify
+
+    def message(text)
+      @message = text
+      self
+    end
+
+    def title(text)
+      @title = text
+      self
+    end
+
+    def image(icon)
+      @icon = icon
+      self
+    end
   end
 end

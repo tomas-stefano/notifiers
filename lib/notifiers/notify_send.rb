@@ -1,21 +1,6 @@
 class NotifySend < Notifiers::Base
   COMMAND = 'notify-send'
 
-  def message(text)
-    @message = text
-    self
-  end
-
-  def title(text)
-    @title = text
-    self
-  end
-
-  def image(icon)
-    @icon = icon
-    self
-  end
-
   def urgency(level)
     @urgency = level.to_s
     self

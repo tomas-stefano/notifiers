@@ -8,16 +8,6 @@ http://growl.info/downloads"
     self
   end
 
-  def title(text)
-    @title = text
-    self
-  end
-
-  def message(text)
-    @message = text
-    self
-  end
-
   def priority(number)
     @priority = number
     self
