@@ -1,8 +1,4 @@
 class Growl < Notifiers::Base
-  COMMAND       = 'growlnotify'
-  ERROR_MESSAGE = "The Growl is not installed. You can find more details here:
-http://growl.info/downloads"
-
   def image(icon)
     @image = icon
     self
@@ -29,7 +25,7 @@ http://growl.info/downloads"
   end
 
   def to_s
-    command = COMMAND.clone
+    command = 'growlnotify'
     command << " --title '#{@title}'" if @title
     command << " --message '#{@message}'"
     [:image, :priority, :host, :password, :auth].each do |option|
@@ -37,5 +33,9 @@ http://growl.info/downloads"
       command << " --#{option} #{variable}" if variable
     end
     command
+  end
+
+  def install_instructions
+    'The Growl is not installed. You can find more details here: http://growl.info/downloads'
   end
 end

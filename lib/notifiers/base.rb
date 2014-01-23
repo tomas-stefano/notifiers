@@ -11,7 +11,11 @@ module Notifiers
     end
 
     def notify
-      system(to_s)
+      notification = system(to_s)
+
+      puts install_instructions unless notification
+
+      notification
     end
     alias :notify! :notify
 
@@ -28,6 +32,10 @@ module Notifiers
     def image(icon)
       @icon = icon
       self
+    end
+
+    def install_instructions
+      raise NotImplementedError
     end
   end
 end

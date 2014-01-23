@@ -102,4 +102,10 @@ describe Growl do
       expect(command).to eql "growlnotify --title 'Pearl Jam' --message 'Last Kiss'"
     end
   end
+
+  describe '#install_instructions' do
+    it 'returns an more concise message' do
+      expect(@growl.install_instructions).to eq 'The Growl is not installed. You can find more details here: http://growl.info/downloads'
+    end
+  end
 end
