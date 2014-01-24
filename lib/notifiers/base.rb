@@ -10,6 +10,10 @@ module Notifiers
       @subclasses
     end
 
+    def self.installed?
+      false
+    end
+
     def notify
       notification = system(to_s)
 
