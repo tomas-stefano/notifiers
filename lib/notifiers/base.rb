@@ -17,7 +17,7 @@ module Notifiers
     def notify
       notification = system(to_s)
 
-      puts install_instructions unless notification
+      puts install_instructions unless notification or install_instructions.empty?
 
       notification
     end
@@ -39,7 +39,7 @@ module Notifiers
     end
 
     def install_instructions
-      raise NotImplementedError
+      ''
     end
   end
 end
