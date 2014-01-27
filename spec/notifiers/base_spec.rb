@@ -2,6 +2,10 @@ require 'spec_helper'
 
 module Notifiers
   describe Base do
+    subject(:base) do
+      Base.new
+    end
+
     describe '.subclasses' do
       it { expect(Base.subclasses).to include(Growl, Knotify, NotifySend) }
     end
@@ -12,11 +16,23 @@ module Notifiers
       end
     end
 
-    describe '#notify' do
-      subject(:base) do
-        Base.new
+    describe '.darwin?' do
+      context 'when the ruby platform is darwin' do
+        it 'returns true' do
+          expect(Base).to receive(:platform?).with(/darwin/).and_return(true)
+          expect(Base.darwin?).to be true
+        end
       end
 
+      context 'when the ruby platform is not darwin' do
+        it 'returns false' do
+          expect(Base).to receive(:platform?).with(/darwin/).and_return(false)
+          expect(Base.darwin?).to be false
+        end
+      end
+    end
+
+    describe '#notify' do
       before do
         expect(base).to receive(:to_s).and_return('example')
       end

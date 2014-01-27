@@ -14,6 +14,18 @@ module Notifiers
       false
     end
 
+    def self.darwin?
+      platform?(/darwin/)
+    end
+
+    def self.platform?(name)
+      RbConfig::CONFIG['host_os'] =~ name or RUBY_PLATFORM =~ name
+    end
+
+    def self.command?(command)
+      `which #{command}` and $?.zero?
+    end
+
     def notify
       notification = system(to_s)
 
