@@ -15,4 +15,8 @@ shared_examples_for 'a notifier' do
   describe '#notify' do
     it { expect(subject).to respond_to(:notify) }
   end
+
+  describe '.installed?' do
+    it { expect(described_class).to respond_to(:installed?) }
+  end
 end
