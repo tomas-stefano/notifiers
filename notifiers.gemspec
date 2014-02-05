@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "notifiers"
-  s.version     = '1.2.0'
+  s.version     = '1.2.1'
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Tomás D'Stefano"]
   s.email       = ["tomasdestefi@gmail.com"]
