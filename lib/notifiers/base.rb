@@ -23,7 +23,7 @@ module Notifiers
     end
 
     def self.command?(command)
-      `which #{command}` and $?.zero?
+      `which #{command}` and $?.to_i.zero?
     end
 
     def notify
