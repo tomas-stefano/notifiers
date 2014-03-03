@@ -8,6 +8,44 @@ module Notifiers
       @growl = growl
     end
 
+    describe '.installed?' do
+      context 'when is darwin platform' do
+        before do
+          expect(Growl).to receive(:platform?).with(/darwin/).and_return(true)
+        end
+
+        context 'with growl installed' do
+          before do
+            expect(Growl).to receive(:command?).with('growlnotify').and_return(true)
+          end
+
+          it 'returns true' do
+            expect(Growl).to be_installed
+          end
+        end
+
+        context 'without growl installed' do
+          before do
+            expect(Growl).to receive(:command?).with('growlnotify').and_return(false)
+          end
+
+          it 'returns false' do
+            expect(Growl).to_not be_installed
+          end
+        end
+      end
+
+      context 'when is not darwin platform' do
+        before do
+          expect(Growl).to receive(:platform?).with(/darwin/).and_return(false)
+        end
+
+        it 'returns false' do
+          expect(Growl).to_not be_installed
+        end
+      end
+    end
+
     describe '#image' do
       it "should keep the image" do
         @growl.image('my_image.png')
