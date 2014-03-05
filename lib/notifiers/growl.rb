@@ -1,7 +1,7 @@
 module Notifiers
   class Growl < Notifiers::Base
     def self.installed?
-      darwin? and command?('growlnotify')
+      platform?(/darwin/) and command?('growlnotify')
     end
 
     def image(icon)
