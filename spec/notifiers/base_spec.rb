@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 module Notifiers
@@ -7,7 +9,7 @@ module Notifiers
     end
 
     describe '.subclasses' do
-      it { expect(Base.subclasses).to include(Growl, Knotify, NotifySend) }
+      it { expect(Base.subclasses).to include(TerminalNotifier, Osascript, NotifySend, Dunstify) }
     end
 
     describe '.installed?' do

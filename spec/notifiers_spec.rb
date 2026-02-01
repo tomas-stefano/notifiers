@@ -1,19 +1,23 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe Notifiers do
-  it { expect(growl).to be_instance_of(Notifiers::Growl) }
+  it { expect(terminal_notifier).to be_instance_of(Notifiers::TerminalNotifier) }
 
-  it { expect(knotify).to be_instance_of(Notifiers::Knotify) }
+  it { expect(osascript).to be_instance_of(Notifiers::Osascript) }
 
   it { expect(notify_send).to be_instance_of(Notifiers::NotifySend) }
 
   it { expect(lib_notify).to be_instance_of(Notifiers::NotifySend) }
 
+  it { expect(dunstify).to be_instance_of(Notifiers::Dunstify) }
+
   describe '#auto_discover' do
     context 'when have a notifier library installed' do
       it 'returns the notifier' do
-        expect(Notifiers::Growl).to receive(:installed?).and_return(true)
-        expect(auto_discover).to be_instance_of(Notifiers::Growl)
+        expect(Notifiers::TerminalNotifier).to receive(:installed?).and_return(true)
+        expect(auto_discover).to be_instance_of(Notifiers::TerminalNotifier)
       end
     end
 
