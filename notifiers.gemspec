@@ -2,13 +2,13 @@
 
 Gem::Specification.new do |s|
   s.name        = "notifiers"
-  s.version     = '1.3.0'
+  s.version     = '2.0.0'
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Tomás D'Stefano"]
   s.email       = ["tomasdestefi@gmail.com"]
   s.homepage    = "https://rubygems.org/gems/notifiers"
-  s.summary     = "Use notifiers like Growl, knotify in a simple and elegant way."
-  s.description = "Use notifiers like Growl, knotify in a simple and clean way."
+  s.summary     = "Cross-platform desktop notifications for macOS and Linux."
+  s.description = "Send desktop notifications on macOS (terminal-notifier, osascript) and Linux (notify-send, dunstify) in a simple and clean way."
   s.license     = "MIT"
 
   s.required_ruby_version     = ">= 3.0"

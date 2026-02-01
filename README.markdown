@@ -1,32 +1,85 @@
 # Notifiers
 
-Use notifications systems like growl, lib-notify in a simple and elegant way. :)
+Cross-platform desktop notifications for macOS and Linux.
+
+[![CI](https://github.com/tomas-stefano/notifiers/actions/workflows/ci.yml/badge.svg)](https://github.com/tomas-stefano/notifiers/actions/workflows/ci.yml)
 
 ## Install
 
-     gem install notifiers
+```
+gem install notifiers
+```
+
+## Requirements
+
+- Ruby >= 3.0
 
 ## Usage
 
-     require 'notifiers'
-     include Notifiers
+```ruby
+require 'notifiers'
+include Notifiers
+```
 
-### Growl
+### Auto Discover
 
-     growl.message('Hi Growl!').image('my_image.png').priority(2).name('my_app').notify!
+Automatically detect and use an available notifier for your platform:
 
-### Lib_Notify
+```ruby
+auto_discover.title('Hello').message('World!').notify!
+```
 
-     notify_send.image('my_image.png').message('Hi Growl').notify!
+### macOS
 
-<b>Obs.: #notify_send is an alias to #lib_notify .</b>
+#### terminal-notifier
 
-### Knotify
+Requires [terminal-notifier](https://github.com/julienXX/terminal-notifier): `brew install terminal-notifier`
 
-     knotify.title('Hello World').message('Hi!').notify!
+```ruby
+terminal_notifier.title('Hello').message('World!').sound('default').notify!
+terminal_notifier.message('Click me').open('https://example.com').notify!
+```
 
-# Why I created this gem?
+#### osascript (built-in)
 
-## Only one explanation:
+Uses AppleScript, no installation required:
 
-### Because is fun! =)
+```ruby
+osascript.title('Hello').message('World!').sound('Glass').notify!
+osascript.title('Alert').subtitle('Status').message('Done!').notify!
+```
+
+### Linux / BSD
+
+#### notify-send
+
+Requires libnotify: `apt install libnotify-bin` or equivalent
+
+```ruby
+notify_send.title('Hello').message('World!').urgency(:critical).notify!
+notify_send.title('Alert').message('Check this').expire_time(5000).notify!
+```
+
+`lib_notify` is an alias for `notify_send`.
+
+#### dunstify
+
+Requires [dunst](https://dunst-project.org/): `apt install dunst` or equivalent
+
+```ruby
+dunstify.title('Hello').message('World!').urgency(:low).notify!
+dunstify.title('Update').message('Progress').timeout(3000).notify!
+```
+
+## Supported Notifiers
+
+| Notifier | Platform | Command | Installation |
+|----------|----------|---------|--------------|
+| `terminal_notifier` | macOS | `terminal-notifier` | `brew install terminal-notifier` |
+| `osascript` | macOS | `osascript` | Built-in |
+| `notify_send` | Linux/BSD | `notify-send` | `apt install libnotify-bin` |
+| `dunstify` | Linux/BSD | `dunstify` | `apt install dunst` |
+
+## License
+
+MIT
